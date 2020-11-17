@@ -1,0 +1,17 @@
+<% if session[:user_id] %>
+  <h2>Hey! You're already logged in...why are you trying to sign up?</h2>
+  <a href="/logout">Click Here to Logout</a>
+
+<% else %>
+
+  <h2>Make A New Account!</h2>
+
+  <form action="/signup" method="post">
+    <label for="Username">Username:</label>
+    <input type="text" name="user[username]" value="">
+    <label for="Password">Password:</label>
+    <input type="password" name="user[password]" value="">
+    <input type="submit" value="Sign Up!">
+  </form>
+
+<% end %>

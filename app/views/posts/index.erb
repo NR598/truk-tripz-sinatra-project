@@ -1,0 +1,14 @@
+<h2>All Posts</h2>
+
+<% if @posts.length == 0 %>
+ There are no posts!
+<% else %>
+  <% @posts.each do |post| %>
+  <ul>
+    <li><a href=<%= "/posts/#{post.id}" %>><%= post.title %> by <%= post.user.username %></a></li>
+  <% end %>
+  </ul>
+<% end %>
+<br />
+<br />
+<a href="/posts/new">Make A New Post!</a>

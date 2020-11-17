@@ -1,0 +1,14 @@
+<h2><%= @post.title %></h2>
+By: <%= @post.user.username %>
+
+<br>
+<br>
+
+<%= @post.body %>
+
+<br>
+<br>
+
+<% if authorized_to_edit(@post) %>
+  <a href=<%= "/posts/#{@post.id}/edit" %>>Edit This Post!</a>
+<% end %>

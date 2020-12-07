@@ -1,8 +1,12 @@
 class LoadsController < ApplicationController
 
   get '/loads' do
-    @loads = Load.all
-    erb :'/loads/index'
+    if is_logged_in
+      @loads = Load.all 
+      erb :'/loads/index'
+    else 
+      redirect "/"
+    end
   end 
 
   get '/loads/new' do #get
@@ -16,20 +20,18 @@ class LoadsController < ApplicationController
 
   get '/loads/:id/edit' do #get
     @loads = find_load
-    erb :'loads/edit'
+      erb :'loads/edit'
   end
+    
+  
 
   patch "/loads/:id" do #update
     load = find_load
-    if authorized_to_edit(load)
-      load.update(params[:loads])
-      redirect "/loads"
-    else
-      "Unable to edit!"
-    end
+      load.update(params[:load])
+      redirect "/loads" 
   end
 
-  post '/loads' do # post
+  post '/loads' do # load
     load = Load.new(params[:load])
     load.user_id = session[:user_id]
     load.save

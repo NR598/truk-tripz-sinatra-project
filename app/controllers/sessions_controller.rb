@@ -17,16 +17,16 @@ class SessionsController < ApplicationController
   end
 
   post '/signup' do
-    user = User.create(params[:user])
-    session[:user_id] = user.id
+    @user = User.create(params[:user])
+    session[:user_id] = @user.id
     redirect "/loads"
   end
-
+ 
   post '/login' do
-    user = User.find_by_username(params[:username])
-    if user
-      if user.authenticate(params[:password])
-        session[:user_id] = user.id
+    @user = User.find_by_username(params[:username])
+    if @user
+      if @user.authenticate(params[:password_digest])
+        session[:user_id] = @user.id
         redirect "/loads"
       else
         "Password Invalid"

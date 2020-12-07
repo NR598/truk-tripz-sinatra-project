@@ -9,11 +9,11 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get "/" do
-    erb :welcome
+  get "/home" do
+    erb :home
   end
 
-  helpers do #helper methods are available in all controllers BUT most importantly, are available in all views
+  helpers do
 
     def is_logged_in
       !!session[:user_id]
@@ -23,8 +23,8 @@ class ApplicationController < Sinatra::Base
       User.find_by(id: session[:user_id])
     end
 
-    def authorized_to_edit(post)
-      post.user_id == session[:user_id]
+    def authorized_to_edit(load)
+      load.user_id == session[:user_id]
     end
 
   end

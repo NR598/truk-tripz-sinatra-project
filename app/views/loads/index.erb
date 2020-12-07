@@ -1,0 +1,18 @@
+
+<center> <h2>Driver Trips</h2> </center>
+
+<% if @loads.length == 0 %>
+No loads available.
+<% else %>
+  <% @loads.each do |load| %>
+  <ol>
+    <li><a href=<%= "/loads/#{load.id}" %>><%= load.load_name %></a></li>
+  <% end %>
+  </ol>
+<% end %>
+<br />
+<form method="get" action="/loads/new">
+<button type="submit">Create New Load</button></form>
+<br>
+<form method="get" action="/logout">
+<button type="submit">Log Out</button></form>

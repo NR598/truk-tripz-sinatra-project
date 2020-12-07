@@ -9,4 +9,4 @@ use Rack::MethodOverride
 run ApplicationController
 use SessionsController
 use UsersController
-use PostsController
+use LoadsController

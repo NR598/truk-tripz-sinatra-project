@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   get '/signup' do
     if is_logged_in
-      "User is already logged in."
+      "A user is already logged in"
     else
       erb :'sessions/signup'
     end
@@ -29,24 +29,18 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect "/loads"
       else
-        "Username/password invalid."
+        "Password Invalid"
       end
     else
-      "User name does not exist."
-    end
-  end
-
-  get '/super_secret' do
-    if is_logged_in
-      "You're logged in! Welcome driver."
-    else
-      "Driver not logged in."
+      "Username Invalid"
     end
   end
 
   get '/logout' do
     session.clear
-    redirect "/home"
+    redirect "/"
   end
 
 end
+
+

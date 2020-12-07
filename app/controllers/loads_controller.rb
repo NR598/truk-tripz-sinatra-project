@@ -1,9 +1,9 @@
 class LoadsController < ApplicationController
 
-  get '/loads' do #get
+  get '/loads' do
     @loads = Load.all
-    erb :'loads/index'
-  end
+    erb :'/loads/index'
+  end 
 
   get '/loads/new' do #get
     erb :'loads/new'

@@ -2,21 +2,21 @@
 
 <form action='/loads/<%= @loads.id %>' method='post'>
 <input type="hidden" name="_method" value="patch">
-  <label>Load ID:</label>          <input type="text" name="load[load_name]" value= "<%= @loads.load_name %>">
+  <label>Load ID:</label> <input type="text" name="load[load_name]" value= "<%= @loads.load_name %>">
   <br />
-  <label>First Name:</label>         <input type="text" name="load[first_name]" value="<%= @loads.first_name %>">
+  <label>First Name:</label> <input type="text" name="load[first_name]" value="<%= @loads.first_name %>">
   <br />
-  <label>Last Name:</label>          <input type="text" name="load[last_name]" value="<%= @loads.last_name %>">
+  <label>Last Name:</label> <input type="text" name="load[last_name]" value="<%= @loads.last_name %>">
   <br />
-  <label>Tractor Number/ID:</label>  <input type="text" name="load[tractor_number]" value="<%= @loads.tractor_number %>">
+  <label>Tractor Number/ID:</label> <input type="text" name="load[tractor_number]" value="<%= @loads.tractor_number %>">
   <br>  
-  <label>Trailer Number/ID:</label>  <input type="text" name="load[trailer_number]" value="<%= @loads.trailer_number %>">
+  <label>Trailer Number/ID:</label> <input type="text" name="load[trailer_number]" value="<%= @loads.trailer_number %>">
   <br />
-  <label>Commodity:</label>          <input type="text" name="load[commodity]" value="<%= @loads.commodity %>">
+  <label>Commodity:</label> <input type="text" name="load[commodity]" value="<%= @loads.commodity %>">
   <br />
-  <label>Weight (LBS):</label>       <input type="number" name="load[weight]" value="<%= @loads.weight %>">
+  <label>Weight (LBS):</label> <input type="number" name="load[weight]" value="<%= @loads.weight %>">
   <br />
-  <label>Load Pick-up City:</label>  <input type="text" name="load[pickup_city]" value="<%= @loads.pickup_city %>">
+  <label>Load Pick-up City:</label> <input type="text" name="load[pickup_city]" value="<%= @loads.pickup_city %>">
   <br />
   <label>Load Delivery City:</label> <input type="text" name="load[delivery_city]" value="<%= @loads.delivery_city %>">
   <br />

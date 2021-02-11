@@ -17,12 +17,12 @@ Pickup City and State: <%= @loads.pickup_city %>
 Delivery City and State: <%= @loads.delivery_city %>
 <br>
 <br>
-<form action=<%= "/loads/#{@loads.id}" %> method="post">
+<center> <form action=<%= "/loads/#{@loads.id}" %> method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Trip">
-</form>
+</form></center>
 <br>
-<form action=<%= "/loads/#{@loads.id}/edit" %> method="get">
+<center> <form action=<%= "/loads/#{@loads.id}/edit" %> method="get">
     <input type="hidden" name="_method" value="patch">
     <input type="submit" value="Edit Trip">
-</form>
+</form> </center>

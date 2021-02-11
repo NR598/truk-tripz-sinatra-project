@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201207141006) do
+ActiveRecord::Schema.define(version: 20201207063732) do
 
   create_table "loads", force: :cascade do |t|
     t.string  "user_id"

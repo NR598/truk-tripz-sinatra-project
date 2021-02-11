@@ -39,9 +39,9 @@ class LoadsController < ApplicationController
   end
 
   delete '/loads/:id' do # DELETE
-   load = Load.find_by_id(params[:id])
+    load = Load.find_by_id(params[:id])
     load.destroy
-    redirect "/loads"
+    redirect '/loads'
   end
 
   private

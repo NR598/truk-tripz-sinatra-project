@@ -27,8 +27,8 @@ class LoadsController < ApplicationController
 
   patch "/loads/:id" do #update
     load = find_load
-      load.update(params[:load])
-      redirect "/loads" 
+    load.update(params[:load])
+    redirect "/loads" 
   end
 
   post '/loads' do # load
@@ -49,5 +49,4 @@ class LoadsController < ApplicationController
   def find_load
     Load.find_by(id: params[:id])
   end
-
 end

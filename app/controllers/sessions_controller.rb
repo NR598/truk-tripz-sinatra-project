@@ -27,18 +27,14 @@ class SessionsController < ApplicationController
       "Username already taken"
     end
   end
- 
+
   post '/login' do
     user = User.find_by_username(params[:username])
-    if user
-      if user.authenticate(params[:password_digest])
-        session[:user_id] = user.id
-        redirect "/loads"
-      else
-        "Password Invalid"
-      end
+    if user.authenticate(params[:password_digest])
+      session[:user_id] = user.id
+      redirect "/loads"
     else
-      "Username Invalid"
+      "Password Invalid"
     end
   end
 

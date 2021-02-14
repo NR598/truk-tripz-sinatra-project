@@ -22,27 +22,24 @@ class SessionsController < ApplicationController
     if !user
       user = User.create(params[:user])
       session[:user_id] = user.id
-      redirect "/loads"
+      redirect '/login'
     else
-      "Username already taken"
+      'Username already taken'
     end
   end
 
   post '/login' do
     user = User.find_by_username(params[:username])
-    if user.authenticate(params[:password_digest])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect "/loads"
+      redirect '/loads'
     else
-      "Password Invalid"
+      erb :'sessions/fail'
     end
   end
 
   get '/logout' do
     session.clear
-    redirect "/"
+    redirect '/'
   end
-
 end
-
-

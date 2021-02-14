@@ -1,28 +1,30 @@
-<center> <h2> <%= @loads.load_name %> </h2> </center>
-<br>
-First Name: <%= @loads.first_name %>
-<br>
-Last Name: <%= @loads.last_name %>
-<br>
-Tractor ID: <%= @loads.tractor_number %>
-<br>
-Trailer ID: <%= @loads.trailer_number %>
-<br>
-Commodity: <%= @loads.commodity %>
-<br>
-Weight: <%= @loads.weight %>
-<br>
-Pickup City and State: <%= @loads.pickup_city %>
-<br>
-Delivery City and State: <%= @loads.delivery_city %>
-<br>
-<br>
-<center> <form action=<%= "/loads/#{@loads.id}" %> method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Trip">
-</form></center>
-<br>
-<center> <form action=<%= "/loads/#{@loads.id}/edit" %> method="get">
-    <input type="hidden" name="_method" value="patch">
-    <input type="submit" value="Edit Trip">
-</form> </center>
+<center> 
+  <h2> <%= @loads.load_name %> </h2> 
+  <br>
+  First Name: <%= @loads.first_name %>
+  <br>
+  Last Name: <%= @loads.last_name %>
+  <br>
+  Tractor ID: <%= @loads.tractor_number %>
+  <br>
+  Trailer ID: <%= @loads.trailer_number %>
+  <br>
+  Commodity: <%= @loads.commodity %>
+  <br>
+  Weight: <%= @loads.weight %>
+  <br>
+  Pickup City and State: <%= @loads.pickup_city %>
+  <br>
+  Delivery City and State: <%= @loads.delivery_city %>
+  <br>
+  <br>
+  <form action=<%= "/loads/#{@loads.id}" %> method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" onmouseup="alert('Are you sure you want to delete this load?')" value="Delete Trip">
+  </form>
+  <br>
+  <form action=<%= "/loads/#{@loads.id}/edit" %> method="get">
+      <input type="hidden" name="_method" value="patch">
+      <input type="submit" value="Edit Trip">
+  </form> 
+</center>

@@ -1,24 +1,22 @@
-<center> <h2>Create New Load for <%= @user.username %></h2> </center>
-
-<form action="/loads" method="post">
-  <label>Load ID:</label>          <input type="text" name="load[load_name]" value="">
-  <br />
-  <label>First Name:</label>         <input type="text" name="load[first_name]" value="">
-  <br />
-  <label>Last Name:</label>          <input type="text" name="load[last_name]" value="">
-  <br />
-  <label>Tractor Number/ID:</label>  <input type="text" name="load[tractor_number]" value="">
-  <br>  
-  <label>Trailer Number/ID:</label>  <input type="text" name="load[trailer_number]" value="">
-  <br />
-  <label>Commodity:</label>          <input type="text" name="load[commodity]" value="">
-  <br />
-  <label>Weight (LBS):</label>       <input type="number" name="load[weight]" value="">
-  <br />
-  <label>Load Pick-up City:</label>  <input type="text" name="load[pickup_city]" value="">
-  <br />
-  <label>Load Delivery City:</label> <input type="text" name="load[delivery_city]" value="">
-  <br />
-  <br />
-  <input type="submit" value="Submit New Load">
-</form>
+<center> <h2>Create New Load</h2> </center>
+  <form action="/loads" method="post">
+      <label>Load ID:</label> <input type="text" name="load[load_name]" value="">
+      <br>
+      <label>First Name:</label> <input type="text" name="load[first_name]" value="">
+      <br>
+      <label>Last Name:</label> <input type="text" name="load[last_name]" value="">
+      <br>
+      <label>Tractor Number/ID:</label> <input type="text" name="load[tractor_number]" value="">
+      <br>  
+      <label>Trailer Number/ID:</label> <input type="text" name="load[trailer_number]" value="">
+      <br>
+      <label>Commodity:</label> <input type="text" name="load[commodity]" value="">
+      <br>
+      <label>Weight (LBS):</label> <input type="number" name="load[weight]" value="">
+      <br>
+      <label>Load Pick-up City:</label> <input type="text" name="load[pickup_city]" value="">
+      <br>
+      <label>Load Delivery City:</label> <input type="text" name="load[delivery_city]" value="">
+      <br>
+    <center> <input type="submit" value="Submit New Load"> </center>
+  </form>

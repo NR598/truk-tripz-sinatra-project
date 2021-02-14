@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210211094517) do
+ActiveRecord::Schema.define(version: 20210214115733) do
 
   create_table "loads", force: :cascade do |t|
-    t.string  "user_id"
+    t.integer "user_id"
     t.string  "load_name"
     t.string  "first_name"
     t.string  "last_name"

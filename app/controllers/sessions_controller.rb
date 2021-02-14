@@ -22,17 +22,21 @@ class SessionsController < ApplicationController
     if !user
       user = User.create(params[:user])
       session[:user_id] = user.id
-      redirect '/login'
+      redirect '/logout'
     else
-      'Username already taken'
+      erb :'sessions/fail'
     end
   end
 
   post '/login' do
     user = User.find_by_username(params[:username])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect '/loads'
+    if user
+      if user && user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect '/loads'
+      else
+        erb :'sessions/fail'
+      end
     else
       erb :'sessions/fail'
     end

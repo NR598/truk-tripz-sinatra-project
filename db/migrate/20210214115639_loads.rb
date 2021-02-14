@@ -1,7 +1,7 @@
 class Loads < ActiveRecord::Migration
   def change
     create_table :loads do |t|
-      t.string  :user_id
+      t.integer  :user_id
       t.string  :load_name
       t.string  :first_name
       t.string  :last_name

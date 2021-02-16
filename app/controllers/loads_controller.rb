@@ -1,6 +1,6 @@
 class LoadsController < ApplicationController
   get '/loads' do
-    if is_logged_in
+    if logged_in?
       @loads = Load.all
       erb :'/loads/index'
     else

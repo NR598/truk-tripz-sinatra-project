@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   get '/login' do
-    if is_logged_in
+    if logged_in?
       redirect '/loads'
     else
       erb :'sessions/login'
@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   get '/signup' do
-    if is_logged_in
+    if logged_in?
       'A user is already logged in'
     else
       erb :'sessions/signup'

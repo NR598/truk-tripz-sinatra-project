@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   get '/login' do
     if is_logged_in
       redirect '/loads'

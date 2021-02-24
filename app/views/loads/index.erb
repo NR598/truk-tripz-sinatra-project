@@ -1,16 +1,37 @@
 
 <center> <h2> Current User: <%= "#{current_user.username}" %> </h2> </center>
 <% if @loads.length == 0 %>
-<center> <h3> No loads available.</h3> </center>
+  <center> <h3> No loads available.</h3> </center>
 <% else %>
-  <% @loads.each do |load| %>
-    <ol>
-    <li><a href=<%="/loads/#{load.id}"%>><%=load.load_name %>, <%= load.first_name %> <%= load.last_name %></a></li>
-    </ol>
-  <% end %>
+  <center>
+    <table>
+      <caption>Trip List</caption>
+      <tr>
+        <th scope="col">Trip Name</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Trip Status</th>
+      </tr>
+      <% @loads.each do |load| %>
+        <tr>
+          <td><center><a href=<%="/loads/#{load.id}"%>><%=load.load_name %></a></center></td>
+          <td><center><a href=<%="/loads/#{load.id}"%>><%=load.first_name %> <%=load.last_name%></a></center></td>       
+        </tr>
+      <% end %>
+    </table>
+  </center>
 <% end %>
-<br />
-<center> <form method="get" action="/loads/new">
-<button type="submit">Create New Load</button></form> </center>
-<center> <form method="get" action="/logout"> 
-<button type="submit">Log Out</button></form> </center>
+<center>
+  <form method="get" action="/loads/new">
+    <div>
+      <button type="submit">Create New Load</button>
+    </div>
+  </form> 
+</center>
+<center>
+  <form method="get" action="/logout"> 
+    <div>
+      <button type="submit">Log Out</button>
+    </div>
+  </form>
+</center>
+

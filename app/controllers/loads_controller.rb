@@ -50,10 +50,4 @@ class LoadsController < ApplicationController
       erb :'/sessions/fail'
     end
   end
-
-  private
-
-  def find_load
-    Load.find_by(id: params[:id])
-  end
 end

@@ -24,5 +24,13 @@ class ApplicationController < Sinatra::Base
     def authorized_to_edit(input)
       input.user_id == session[:user_id]
     end
+
+    def find_load
+      Load.find_by(id: params[:id])
+    end
+
+    def find_user
+      User.find_by(id: params[:id])
+    end
   end
 end

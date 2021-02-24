@@ -6,14 +6,15 @@
   <center>
     <table>
       <tr>
-        <th scope="col"><center>Trip Name</center></th>
+        <th scope="col"><center>Trip Name/ID</center></th>
         <th scope="col"><center>Driver Name</center></th>
         <th scope="col"><center>Trip Status</center></th>
       </tr>
       <% @loads.each do |load| %>
         <tr>
           <td><center><a href=<%="/loads/#{load.id}"%>><%=load.load_name %></a></center></td>
-          <td><center><a href=<%="/loads/#{load.id}"%>><%=load.first_name %> <%=load.last_name%></a></center></td>       
+          <td><center><%=load.first_name %> <%=load.last_name%></center></td>  
+          <td><center>On Time</center></td>     
         </tr>
       <% end %>
     </table>

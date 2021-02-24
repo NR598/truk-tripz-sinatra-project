@@ -1,8 +1,8 @@
 
-  <center> <h2>Edit Load Information</h2> </center>
-
- <form action='/loads/<%= @loads.id %>' method='post'>
-  <input type="hidden" name="_method" value="patch">
+<center> 
+  <h2>Edit Load Information</h2> 
+  <form action='/loads/<%= @loads.id %>' method='post'>
+    <input type="hidden" name="_method" value="patch">
     <label>Load ID:</label> <input type="text" name="load[load_name]" value= "<%= @loads.load_name %>">
     <br>
     <label>First Name:</label> <input type="text" name="load[first_name]" value="<%= @loads.first_name %>">
@@ -21,6 +21,6 @@
     <br>
     <label>Load Delivery City:</label> <input type="text" name="load[delivery_city]" value="<%= @loads.delivery_city %>">
     <br>
-    <br>
-    <center> <input type="submit" value="Update Load"> </center>
+    <input type="submit" value="Update Load"> 
   </form>
+</center>

@@ -16,7 +16,7 @@ enter "shotgun" into the terminal
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/NR598/Cli_Project.git
+Bug reports and pull requests are welcome on GitHub at https://github.com/NR598/truk-tripz-sinatra-project
 
 ## License
 

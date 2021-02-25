@@ -5,7 +5,7 @@ This simple web app will help truck drivers and dispatchers schedule loads and k
 ## Install
 
 Install the main folder in preferred directory. 
-using bash type "bundle install" to get required gems.
+Using bash type "bundle install" to get required gems.
     
 ## Usage
 

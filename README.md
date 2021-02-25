@@ -1,6 +1,6 @@
 # Truk-Tripz trucker load management web app
 
-This simple web app will help truck drivers and dispatchers schedule and keep track of deliveries.
+This simple web app will help truck drivers and dispatchers schedule loads and keep track of deliveries.
 
 ## Install
 

@@ -10,9 +10,7 @@ using bash type "bundle install" to get required gems.
 ## Usage
 
 Using Bash, navigate to "truk-tripz-sinatra-project" folder.
-enter "shotgun" into the terminal
-
-
+Enter "shotgun" into the terminal
 
 ## Contributing
 

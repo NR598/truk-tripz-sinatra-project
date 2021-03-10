@@ -18,10 +18,10 @@ class SessionsController < ApplicationController
   post '/signup' do
     # binding.pry
     user = User.find_by_username(params[:user][:username])
-    if !user
+    if !user && params[:user][:username] != ''
       user = User.create(params[:user])
       session[:user_id] = user.id
-      redirect '/logout'
+      redirect '/loads'
     else
       erb :'sessions/fail'
     end
@@ -29,16 +29,12 @@ class SessionsController < ApplicationController
 
   post '/login' do
     user = User.find_by_username(params[:username])
-    if user
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect '/loads'
       else
         erb :'sessions/fail'
       end
-    else
-      erb :'sessions/fail'
-    end
   end
 
   get '/logout' do

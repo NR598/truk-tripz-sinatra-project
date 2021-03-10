@@ -18,9 +18,8 @@ class LoadsController < ApplicationController
   end
 
   get '/loads/:id/edit' do # EDIT
-    load = find_load
-    if authorized_to_edit(load)
-      @loads = find_load
+    @loads = find_load
+    if authorized_to_edit(@loads)
       erb :'loads/edit'
     else
       erb :'/sessions/fail'
@@ -29,8 +28,12 @@ class LoadsController < ApplicationController
 
   patch '/loads/:id' do # UPDATE
     load = find_load
-    load.update(params[:load])
-    redirect '/loads'
+    if authorized_to_edit(load)
+      load.update(params[:load])
+      redirect '/loads'
+    else
+      erb :'/sessions/fail'
+    end 
   end
 
   post '/loads' do # CREATE

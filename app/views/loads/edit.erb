@@ -1,7 +1,7 @@
 
 <center> 
   <h2>Edit Load Information</h2> 
-  <form action='/loads/<%= @loads.id %>' method='post'>
+  <form action='/loads/<%= @load.id %>' method='post'>
     <input type="hidden" name="_method" value="patch">
     <label>Load ID:</label> <input type="text" name="load[load_name]" value= "<%= @loads.load_name %>">
     <br>
